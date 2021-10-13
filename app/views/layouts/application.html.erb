@@ -12,8 +12,16 @@
 
   <body>
   <% if logged_in? %>
-    <!-- <p>You are logged in as <%= current_user.username %> </p> -->
     <ul class="nav justify-content-center border bg-dark">
+      <% if current_user.role == 'customer' %>
+        <li class="p-4">
+          User: <%= current_user.username %>
+        </li>
+      <% else %>
+        <li class="p-4">
+          User: Admin
+        </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link p-4" href="/">Home</a>
       </li>
