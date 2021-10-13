@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_165753) do
   create_table "books", force: :cascade do |t|
     t.text "title"
     t.integer "genre_id"
-    t.text "description"
+    t.text "summary"
     t.integer "number_of_pages"
     t.text "author"
     t.integer "price"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2020_05_25_165753) do
   create_table "purchases", force: :cascade do |t|
     t.integer "user_id"
     t.integer "book_id"
-    t.text "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
