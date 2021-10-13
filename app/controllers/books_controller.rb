@@ -61,7 +61,7 @@ class BooksController < ApplicationController
         params.require(:book).permit(
             :title, 
             :genre_id, 
-            :description, 
+            :summary, 
             :number_of_pages, 
             :author, 
             :price, 

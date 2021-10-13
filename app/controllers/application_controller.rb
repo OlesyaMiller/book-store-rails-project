@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     
-    protect_from_forgery with: :exception
+    protect_from_forgery with: :exception # included by default, protects from hackers
     helper_method :current_user, :logged_in?
     
     def current_user
@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
         !!current_user
     end
 
-    def require_login
+    def require_login # is not used in the views, that's why not listed above
         if current_user 
             current_user
         else 
