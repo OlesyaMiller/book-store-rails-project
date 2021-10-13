@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_165753) do
     t.text "email"
     t.text "password_digest"
     t.integer "credit"
+    t.text "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
