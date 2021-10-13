@@ -14,9 +14,9 @@
     <%= f.label :password_confirmation, "Confirm Password" %>
     <%= f.text_field :password_confirmation %><br/>
 
-    <%= f.label :role, "Role" %>
-    <%= f.radio_button :role, 'admin' %>Admin<br />
+    <%= f.label :role, "Account Type:" %><br/>
     <%= f.radio_button :role, 'customer', :checked => true %>Customer<br />
+    <%= f.radio_button :role, 'admin' %>Admin<br />
 
     <%= f.submit %>
 <% end %>

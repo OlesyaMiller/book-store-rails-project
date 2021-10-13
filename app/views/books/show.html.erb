@@ -4,9 +4,10 @@
 <p>Summary: <%= @book.summary %></p>
 <p>Price: <%= @book.price %></p>
 <p>Genre: <%= @book.genre.name %></p>
-<p><strong>Your Credit: <%= current_user.credit %></strong></p>
 
-<% if current_user.role == 'admin'%>
+<% if current_user.role != 'admin'%>
+    <p><strong>Your Credit: <%= current_user.credit %></strong></p>
+<% else %>
     <%= link_to "Edit Listing", edit_book_path(@book) %><br/>
     <%= link_to "Delete Listing", book_path(@book), method: :delete, data: { confirm: "Are you sure you want to delete this book?" } %>
 <% end %>  
