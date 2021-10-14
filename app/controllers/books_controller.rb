@@ -23,10 +23,10 @@ class BooksController < ApplicationController
 
     def index
         if !params[:user_id]
-            if (params[:book] && params[:book][:search].blank?) || !params[:book]
+            if (params[:book] && params[:book][:genre_id].blank?) || !params[:book]
                 @books = Book.all.order(:title) 
             else
-                @books = Book.where(genre_id: params[:book][:search])
+                @books = Book.where(genre_id: params[:book][:genre_id])
             end
         else
             @user = User.find_by(id: params[:user_id])
@@ -65,9 +65,8 @@ class BooksController < ApplicationController
             :summary, 
             :number_of_pages, 
             :author, 
-            :price, 
-            genre_attributes: [:name]
-            )
+            :price
+        )
     end
 
     def find_book
