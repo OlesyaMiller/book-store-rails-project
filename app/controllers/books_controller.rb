@@ -31,7 +31,7 @@ class BooksController < ApplicationController
         else
             @user = User.find_by(id: params[:user_id])
             if @user 
-                @books = @user.books
+                @books = @user.books.uniq
             end
         end
     end

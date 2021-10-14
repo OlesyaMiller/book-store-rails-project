@@ -6,16 +6,19 @@
         <%= collection_select :book, :genre_id, Genre.all, :id, :name, include_blank: true %>
         <%= submit_tag ("Search") %> 
     <% end %>
-
+    <% @books.each do |book| %>
+        Title: <%= link_to book.title, book_path(book) %><br/>
+    <% end %>
 <% else %>
     <h2><%= current_user.username %>'s Purchases</h2>
     <% if current_user.books == []%>
         <p><%= current_user.username %> doesn't have any purchases</p>
+    <% else %>
+        <% @books.each do |book| %>
+            Title: <%= link_to book.title, book_path(book) %>,
+            Quantity: 
+            <% books = current_user.books.select {|item| item.id == book.id} %>
+            <%= books.count %><br/>
+        <% end %>
     <% end %>
-<% end %>      
-
-
-
-<% @books.each do |book| %>
-    <%= link_to book.title, book_path(book) %><br/>
-<% end %>
+<% end %>  
