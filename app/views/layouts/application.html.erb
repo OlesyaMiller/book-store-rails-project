@@ -14,11 +14,11 @@
   <% if logged_in? %>
     <ul class="nav justify-content-center border bg-dark">
       <% if current_user.role == 'customer' %>
-        <li class="p-4">
+        <li class="p-4 role">
           User: <%= current_user.username %>
         </li>
       <% else %>
-        <li class="p-4">
+        <li class="p-4 role">
           User: Admin
         </li>
       <% end %>
@@ -26,10 +26,7 @@
         <a class="nav-link p-4" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link p-4" href="<%= books_path %>">All Listings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link p-4" href="<%= new_user_purchase_path(current_user) %>">Browse Books</a>
+        <a class="nav-link p-4" href="<%= books_path %>">Browse Books</a>
       </li>
       <% if current_user.role != 'customer' %>
       <li class="nav-item">
