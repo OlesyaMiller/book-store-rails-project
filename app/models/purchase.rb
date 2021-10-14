@@ -8,7 +8,7 @@ class Purchase < ApplicationRecord
         else
             self.user.credit -= self.book.price 
             self.user.save 
-            "Concratulations on purchasing this book! Your remaining credit is #{self.user.credit}"
+            "Congratulations on purchasing this book! Your remaining credit is #{self.user.credit}"
         end        
     end
 end

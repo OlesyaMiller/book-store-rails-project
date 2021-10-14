@@ -4,11 +4,8 @@
 
     <%= f.label :summary, "Summary" %>
     <%= f.text_field :summary %>
-
-    <%#= f.fields_for :genre do |f| %>
-        <%= f.label "Genre Name" %>
-        <%= collection_select :book, :genre_id, Genre.all, :id, :name, include_blank: true %>
-    <%# end %>
+    <%= f.label "Genre Name" %>
+    <%= collection_select :book, :genre_id, Genre.all, :id, :name, include_blank: true %>
 
     <%= f.label :number_of_pages, "Number of Pages" %>
     <%= f.number_field :number_of_pages %>
