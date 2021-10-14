@@ -25,11 +25,9 @@
       <li class="nav-item">
         <a class="nav-link p-4" href="/">Home</a>
       </li>
-      <% if current_user.role != 'customer' %>
       <li class="nav-item">
         <a class="nav-link p-4" href="<%= books_path %>">All Listings</a>
       </li>
-      <% end %>
       <li class="nav-item">
         <a class="nav-link p-4" href="<%= new_user_purchase_path(current_user) %>">Browse Books</a>
       </li>

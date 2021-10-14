@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find_by(id: params[:id])
+        find_user
     end
 
     def update 
@@ -47,4 +47,7 @@ class UsersController < ApplicationController
         )
     end    
 
+    def find_user
+        @user = User.find_by(id: params[:id])
+    end
 end

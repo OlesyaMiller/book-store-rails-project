@@ -18,6 +18,7 @@ class BooksController < ApplicationController
 
     def show
         @book = Book.find_by(id: params[:id])
+        @purchase = Purchase.new 
     end
 
     def index
@@ -36,7 +37,7 @@ class BooksController < ApplicationController
     end
 
     def edit
-        @book = Book.find_by(id: params[:id])
+        find_book
     end
 
     def update

@@ -4,8 +4,13 @@ class PurchasesController < ApplicationController
 
     def new
         @purchase = Purchase.new 
-        @user = User.find(params[:user_id])
-        @purchase.user = @user 
+        if params[:user_id]
+            user = User.find(params[:user_id])
+            @purchase.user = user 
+        else
+            user = User.find_by(id: current_user.id)
+            @purchase.user = user 
+        end
     end
 
     def create

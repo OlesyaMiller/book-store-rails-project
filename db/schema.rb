@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_165753) do
     t.integer "number_of_pages"
     t.text "author"
     t.integer "price"
-    t.boolean "for_sale", default: false
+    t.boolean "for_sale", default: false # remove 
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

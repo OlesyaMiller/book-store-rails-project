@@ -1,5 +1,5 @@
 <%= form_for @purchase do |f| %>
-    <%= f.hidden_field :user_id %><br />
+    <%= f.hidden_field :user_id %><br/>
     <%= f.label :book_id, "Select Book" %>
     <%= f.collection_select :book_id, Book.all, :id, :title %><br/>
     <%= f.submit "Purchase This Book" %>
