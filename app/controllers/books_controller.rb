@@ -3,8 +3,11 @@ class BooksController < ApplicationController
     before_action :require_login
 
     def new
-        @book = Book.new
-        @book.build_genre  
+        if current_user.role == "admin"
+            @book = Book.new
+        else
+            redirect_to user_path(current_user)
+        end    
     end
 
     def create
@@ -37,17 +40,21 @@ class BooksController < ApplicationController
     end
 
     def edit
-        find_book
+        if current_user.role == "admin"
+            find_book
+        else
+            redirect_to user_path(current_user)
+        end
     end
 
     def update
         find_book
-        if @book
+        if @book 
             @book.update(book_params)
             redirect_to book_path(@book)
         else
-            render :edit 
-        end
+            render :edit
+        end    
     end
 
     def destroy
