@@ -1,24 +1,9 @@
-# README
+Welcome to my AI Book Shop App!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application lets a user search for a book by genre and purchase it if the user has enough credit. A cool thing to note is that user can register as a customer or an admin. This way such features as adding books to the colection and updating prices will only be accesible to admin.
 
-Things you may want to cover:
+The app uses 2.6.1 ruby version and Rails 6.0.4.1
 
-* Ruby version
+To be able to run the app, first install all the dependencies, including the database, by running 'bundle install'.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Next, start the server by running 'rails s' command. Once you have the server running, go to http://localhost:3000 and enjoy the app!
